@@ -1,9 +1,10 @@
 
-# Frontend (Netlify)
-- Next.js app med Netlify plugin (bygger automatiskt)
-- Sidor: /, /jobs, /consultant, /about, /contact, /admin (jobs & candidates)
+# Frontend (Netlify, Next.js 14 + TS)
+- Alias `@/*` via jsconfig.json
+- Supabase Auth-klient inkluderad
+- Sidor: /, /jobs, /consultant, /about, /contact, /admin, /admin/jobs, /admin/candidates/[jobId]
 
-## Deploy
-1) Skapa ny site i Netlify via **Import from Git** (rekommenderas). Alternativt ladda upp zip och låt Netlify bygga.
-2) Env vars enligt `.env.example`.
-3) Build command: `npm run build`, Publish: `.next`.
+## Deploy (Netlify)
+- Import from Git (rekommenderas).
+- Env: NEXT_PUBLIC_API_BASE, NEXT_PUBLIC_SUPABASE_URL, NEXT_PUBLIC_SUPABASE_ANON_KEY, NEXT_PUBLIC_ADMIN_EMAILS, NEXT_PUBLIC_ADMIN_API_KEY
+- Build: `npm run build`, Publish: `.next`

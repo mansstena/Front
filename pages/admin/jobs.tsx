@@ -34,7 +34,7 @@ export default function AdminJobs(){
           <div key={j.id} className="bg-white rounded-2xl p-4 border border-slate-200">
             <div className="font-semibold">{j.title}</div>
             <div className="text-sm text-slate-600">{j.client}</div>
-            <div className="text-sm mt-2">{j.description}</div>
+            <div className="text-sm mt-2 whitespace-pre-wrap">{j.description}</div>
             <div className="flex gap-3 mt-3">
               <Link className="text-blue-700 underline" href={`/admin/candidates/${j.id}`}>Kandidater</Link>
               <button onClick={()=>remove(j.id)} className="text-red-700 underline">Ta bort</button>

@@ -31,14 +31,15 @@ export default function Candidates(){
       <h1 className="text-2xl font-semibold mb-2">Kandidater</h1>
       {job && <div className="text-sm text-slate-600 mb-4">{job.title} • {job.client}</div>}
       <div className="grid gap-3">
+        {cands.length===0 && <div className="text-sm text-slate-600">Inga kandidater ännu.</div>}
         {cands.map((c:any)=>(<Row key={c.id} c={c} onSave={save}/>))}
       </div>
     </Layout>
   )
 }
 function Row({c,onSave}:{c:any,onSave:(id:number,r:number,n:string)=>void}){
-  const [rating,setRating]=useState<number>(c.rating||0)
-  const [notes,setNotes]=useState<string>(c.notes||'')
+  const [rating,setRating]=React.useState<number>(c.rating||0)
+  const [notes,setNotes]=React.useState<string>(c.notes||'')
   return (
     <div className="bg-white rounded-2xl p-4 border border-slate-200 grid gap-2">
       <div className="font-semibold">{c.name} <span className="text-slate-500 text-xs">({c.email})</span></div>

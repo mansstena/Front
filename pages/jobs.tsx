@@ -18,11 +18,12 @@ export default function Jobs(){
     <Layout>
       <h1 className="text-2xl font-bold mb-4">Lediga jobb</h1>
       <div className="grid gap-4">
+        {jobs.length===0 && <div className="text-sm text-slate-600">Inga annonser ännu. Lägg till i Admin &rarr; Annonser.</div>}
         {jobs.map((j:any)=>(
           <div key={j.id} className="bg-white rounded-2xl p-4 border border-slate-200">
             <div className="font-semibold">{j.title || j.role}</div>
             <div className="text-sm text-slate-600">{j.client}</div>
-            <div className="text-sm mt-2">{j.description||''}</div>
+            <div className="text-sm mt-2 whitespace-pre-wrap">{j.description||''}</div>
             <button onClick={()=>setApplyFor(j.id)} className="mt-3 px-3 py-2 rounded-xl bg-blue-600 text-white">Ansök</button>
             {applyFor===j.id && (
               <div className="mt-3 grid sm:grid-cols-3 gap-2">

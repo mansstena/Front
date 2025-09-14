@@ -58,5 +58,5 @@ function L({label,v,s,type='text',placeholder=''}:{label:string,v:any,s:(x:any)=
   return (<label className="text-sm"><div className="text-slate-600 mb-1">{label}</div><input value={v} onChange={e=>s(e.target.value)} type={type} placeholder={placeholder} className="w-full border border-slate-300 rounded-xl px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"/></label>)
 }
 function N({label,v,s}:{label:string,v:number,s:(x:number)=>void}){
-  return (<label className="text-sm"><div className="text-slate-600 mb-1">{label}</div><input value={v} onChange={e=>s(Number(e.target.value))} type="number" className="w-full border border-slate-300 rounded-xl px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"/></label>)
+  return (<label className="text-sm"><div className="text-slate-600 mb-1">{label}</div><input value={v} onChange={e=>setTimeout(()=>s(Number(e.target.value)),0)} type="number" className="w-full border border-slate-300 rounded-xl px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"/></label>)
 }
